@@ -5,7 +5,7 @@ class BaseEvent(object):
 
     @classmethod
     def _serialize(cls, data):
-        return data
+        return cls(**data)
 
     @classmethod
     def _deserialize(cls, *args, **kwargs):
