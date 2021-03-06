@@ -87,9 +87,9 @@ class ClientSystemBase(ClientSystem):
         此函数用于与从服务端获取数据，你需要在客户端实现一个名称与signore参数相同的函数，并用 @to_client() 装饰器装饰，
         或是在装饰器参数中指明signore名称，如 @to_client('foo')
         Args:
-            signore: string 信号名称
-            data: dict 需要传入服务端函数的名称
-            delay: float 延迟获取结果的时间，用于解决服务端延迟较大的问题，默认为0.1秒
+            signore: string 信号名称，可以简单理解为对应服务端目标函数的名称
+            data: dict 需要传入服务端函数的数据
+            delay: float 延迟获取结果的时间，用于解决服务端延迟较大的问题，默认为0.1秒。现在还不起作用
 
         Returns:
 
