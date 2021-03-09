@@ -1,1 +1,1 @@
-from mod import Mod
+from net_mod import Mod
