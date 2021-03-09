@@ -49,7 +49,7 @@ class ServerSystemBase(ServerSystem):
         Returns:
 
         """
-        import config
+        from ... import config
         self._mod_name = config.MOD_NAME
         self._client_system_name = config.CLIENT_SYSTEM_NAME
 
@@ -113,10 +113,8 @@ class ServerSystemBase(ServerSystem):
         # 结果将成功打印出 ok
         ```
         """
-        func_name = self.to_client_functions.get(signore)
-        func = eval(func_name, globals(), {k: getattr(self, k) for k in dir(self)})
-        if hasattr(func, 'to_client'):
-            return func(data)
+        func = ServerSystemBase.to_client_functions.get(signore)
+        return func(self, data)
 
     def data_to_client(self, signore_data):
         player_id = signore_data.get('player_id')

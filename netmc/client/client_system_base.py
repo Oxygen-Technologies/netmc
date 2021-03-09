@@ -50,7 +50,7 @@ class ClientSystemBase(ClientSystem):
         Returns:
 
         """
-        import config
+        from ... import config
         self._mod_name = config.MOD_NAME
         self._server_system_name = config.SERVER_SYSTEM_NAME
 
